@@ -2,9 +2,13 @@
 
 # Default location for output (needs to match output_dir's value found in nanoc.yaml)
 output/
+out
 
 # Temporary file directory
 tmp/nanoc/
 
 # Crash Log
 crash.log
+
+node_modules
+.react-email
