@@ -81,14 +81,17 @@ export default function Email() {
             </Column>
           </Section>
           <Hr style={hr} />
+
+          {/* Opinion in Lead Start */}
+
           <Section style={section} >
             <Heading as='h2' style={section_heading}>Opinion in Lead</Heading>
             <Heading as='h3' style={section_title}>Implications of carbon border tax</Heading>
             <Text style={paragraph}>
-              In its fight against climate change, the European Union, in July 2021, decided to integrate its trade policy with climate policy by proposing the Carbon Border Adjustment Mechanism (CBAM). The proposal was in line with its goal to cut net greenhouse gas (GHG) emissions by at <Link style={anchor} href="https://www.lemonde.fr/en/environment/article/2022/12/13/eu-adopts-carbon-border-tax-to-fight-polluting-imports_6007589_114.html">least 55 per cent by 2030 compared to 1990</Link> and achieve carbon neutrality by 2050. To achieve this, the EU is <Link style={anchor} href="https://www.consilium.europa.eu/en/policies/green-deal/fit-for-55-the-eu-plan-for-a-green-transition/">updating and revising EU legislation</Link> and putting in place new initiatives with the aim of ensuring that EU policies are in line with the climate goals, calling it ‘Fit for 55’. The CBAM, which was agreed on by the EU Council and Parliament in December 2022, is one of the initiatives under its Fit for 55 programme.
+              South Asia is <Link style={anchor} href="https://blogs.worldbank.org/endpovertyinsouthasia/green-energy-can-accelerate-sustainable-growth-across-south-asia#:~:text=A%20Haven%20for%20Green%20Energy&text=Bhutan%20and%20Nepal%20produce%20vast,coal-fired%20capacity%20with%20renewables.">rich in resources</Link> for renewable energy generation: hydropower in Nepal and Bhutan, solar energy potential in Bangladesh and Pakistan, and wind and solar energy generation in Maldives and Sri Lanka. Despite relying heavily on fossil fuels, South Asian countries have been steadily making progress in clean energy projects.
             </Text>
             <Text style={paragraph}>
-              The <Link style={anchor} href="https://taxation-customs.ec.europa.eu/green-taxation-0/carbon-border-adjustment-mechanism_en">CBAM</Link> will enter into force in its transitional phase as of 1 October 2023 and is planned to be fully implemented by January 2026. The CBAM will initially apply to imports of certain goods whose production is carbon intensive and at the most significant risk of carbon leakage, such as cement, iron and steel, aluminum, fertilizers, electricity and hydrogen. According to the EU, this move is aimed at curbing what it has called ‘carbon leakage’, which occurs when companies based in the EU move carbon-intensive production abroad to countries where less stringent climate policies are in place than in the EU, or when the EU products get replaced by more carbon-intensive imports. By 2023, importers will be required to report emissions embedded in the goods they import and purchase carbon import permits for each metric ton of carbon dioxide (CO2) emissions produced by carbon-intensive products brought into the EU. Goods imported from countries that have domestic carbon-pricing regimes similar to the EU’s will be exempt from the levy, subject to an agreement between those countries and the EU.
+              In the market for end products that use or potentially use clean energy, India hosts companies with potential for international competitiveness, such as Tata Motors which dominates the domestic as well as South Asian electric vehicle (EV) markets and has been looking to <Link style={anchor} href="https://www.business-standard.com/article/companies/tata-motors-to-export-its-evs-to-mature-auto-markets-122040601374_1.html">expand</Link> exports to international markets. As of July 2021, India has 380 EV manufacturers, including 19 companies that <Link style={anchor} href="https://e-amrit.niti.gov.in/Manufacturers">manufacture</Link> four-wheelers. Industry exports were valued at US$13.3 billion in FY21, with USA, Germany, UK, Thailand and Italy as major importers. Exports were <Link style={anchor} href="https://www.investindia.gov.in/sector/auto-components">projected</Link> to grow to US$80 billion by 2026. However, the United States' new <Link style={anchor} href="https://www.whitehouse.gov/cleanenergy/inflation-reduction-act-guidebook/">Inflation Reduction Act</Link> (IRA) could change this trajectory.
             </Text>
             <Section style={{ textAlign: 'center' as const, marginTop: '20px' }}>
               <Button
@@ -108,14 +111,19 @@ export default function Email() {
                   display: 'block',
                   width: '95%',
                 }}
-                href="https://sawtee.org/opinion-in-lead/implications-of-the-carbon-border-tax.html"
+                href="https://sawtee.org/opinion-in-lead/us-inflation-reduction-act-disrupts-green-industrial-race.html"
               >
                 Read More
               </Button>
             </Section>
 
           </Section>
-          <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
+
+          {/* Opinion in Lead End*/}
+
+          {/* Report */}
+
+          {/* <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
             <Heading as='h2' style={section_heading}>Report</Heading>
             <Heading as='h3' style={section_title}>Inflation peaking amid low growth</Heading>
             <Section>
@@ -191,79 +199,83 @@ export default function Email() {
               </Button>
             </Section>
 
-          </Section>
+          </Section> */}
+
+          {/* Report End */}
+
+
+          {/* News Start */}
+
           <Section style={section} >
             <Heading as='h2' style={section_heading}>News</Heading>
+
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link href='https://www.bbc.com/news/business-64142662'><Img width='100%' height='180' alt='Third of world in recession this year, IMF head warns' title='Third of world in recession this year, IMF head warns' src='https://ichef.bbci.co.uk/news/976/cpsprodpb/E5DF/production/_128174885_993e57dee044e4e94f6de72ac1637f5d2ba6d50b.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Third of world in recession this year, IMF head warns</Heading>
-                <Text style={paragraph}>A third of the global economy will be in recession this year as the war in Ukraine, rising prices, higher interest rates and the spread of COVID in China weigh on the global economy.</Text>
-                <Link style={news_link} href="https://www.bbc.com/news/business-64142662">Read More</Link>
+                <Link href='https://tkpo.st/41KEjbs'><Img width='100%' height='180' alt='Trademark bill languishes as infringement cases rise' title='Trademark bill languishes as infringement cases rise' src='https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2023/third-party/Unauthoriseduseoftrademarksofmultinationalandnationalbrandshasbeenincreasingbythedayduetoweakenforcementoflaws-1677598467.jpg&w=900&height=601' /></Link>
+                <Heading style={news_title} as='h3'>Trademark bill languishes as infringement cases rise</Heading>
+                <Text style={paragraph}>The cases of trademark infringement in Nepal have been on the rise each passing year due to the failure of the government to enact a new law.</Text>
+                <Link style={news_link} href="https://tkpo.st/41KEjbs">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link href='https://www.aljazeera.com/economy/2023/1/25/hindenburg-shorts-indias-adani-citing-debt-accounting-concerns'><Img width='100%' height='180' alt='Hindenburg shorts India’s Adani citing concerns' title='Hindenburg shorts India’s Adani citing concerns' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2012-09-25T120000Z_295164505_GM1E89P1K6T01_RTRMADP_3_INDIA-ADANI.jpg?resize=770%2C513&quality=80' /></Link>
-                <Heading style={news_title} as='h3'>Hindenburg shorts India’s Adani citing concerns</Heading>
-                <Text style={paragraph}>Hindenburg Research said it held short positions in India’s Adani Group, accusing the conglomerate of improper use of offshore tax havens and flagging concerns about high debt.</Text>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/25/hindenburg-shorts-indias-adani-citing-debt-accounting-concerns">Read More</Link>
+                <Link href='https://www.dawn.com/news/1739675/govt-unhappy-as-imf-shifts-goalposts'><Img width='100%' height='180' alt='Pak govt unhappy as IMF ‘shifts goalposts’' title='Pak govt unhappy as IMF ‘shifts goalposts’' src='https://th.bing.com/th?id=OIF.brHZM24Iw%2fGsAU891bUWHg&pid=ImgDet&rs=1' /></Link>
+                <Heading style={news_title} as='h3'>Pak govt unhappy as IMF ‘shifts goalposts’</Heading>
+                <Text style={paragraph}>Pakistani authorities say IMF ‘changed its mind’ on at least four prior actions and they hint at ‘1998-like situation’, adding foreign capitals working for Pakistan’s ‘meltdown’.</Text>
+                <Link style={news_link} href="https://www.dawn.com/news/1739675/govt-unhappy-as-imf-shifts-goalposts">Read More</Link>
               </Column>
             </Section>
 
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.npr.org/2023/01/29/1152428444/pakistans-nationwide-blackout-is-part-of-an-escalating-crisis"><Img width='100%' height='180' alt="Pakistan's nationwide blackout is part of an escalating crisis" title="Pakistan's nationwide blackout is part of an escalating crisis" src='https://media.npr.org/assets/img/2023/01/29/ap23028760157555_wide-8299e89954f731ca4a48c72b259e21bb3b0ce4ac.jpg?s=400' /></Link>
-                <Heading style={news_title} as='h3'>Pakistan's nationwide blackout is part of an escalating crisis</Heading>
-                <Text style={paragraph}>Pakistan has been struggling to keep its grid up and running in recent months and a recent nationwide blackout showed just how bad the problem has become.</Text>
-                <Link style={news_link} href="https://www.npr.org/2023/01/29/1152428444/pakistans-nationwide-blackout-is-part-of-an-escalating-crisis">Read More</Link>
+                <Link style={news_link} href="https://kathmandupost.com/money/2023/02/07/national-pashmina-sector-export-strategy-launched"><Img width='100%' height='180' alt="  National pashmina sector export strategy launched" title="National pashmina sector export strategy launched" src='https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2023/money/NationalPashminaSectorLaunchprogram07022323-1675777714.jpg&w=900&height=601' /></Link>
+                <Heading style={news_title} as='h3'>National pashmina sector export strategy launched</Heading>
+                <Text style={paragraph}>The National Pashmina Sector Export Strategy 2022-26 was launched on Tuesday with an aim to boost the export of “Chyangra pashmina” from NPR2.82 billion in 2021 to NPR10 billion by the end of 2026.</Text>
+                <Link style={news_link} href="https://kathmandupost.com/money/2023/02/07/national-pashmina-sector-export-strategy-launched">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount"><Img width='100%' height='180' alt='Indian made iPhone hits US$1bn exports mark in Dec' title='Indian made iPhone hits US$1bn exports mark in Dec' src='https://img.etimg.com/thumb/msid-97237492,width-300,height-225,imgsize-54614,,resizemode-75/iphone.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Indian made iPhone hits US$1bn exports mark in Dec</Heading>
-                <Text style={paragraph}>Pakistan secured a lifeline of about US$4 billion from the United Arab Emirates and Saudi Arabia to sail through the immediate challenge of a sovereign default.</Text>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount">Read More</Link>
-              </Column>
-            </Section>
-
-            <Section style={news_section}>
-              <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study"><Img width='100%' height='180' alt='ExxonMobil predicted climate change while downplaying risk' title='ExxonMobil predicted climate change while downplaying risk' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2021-01-06T000000Z_271332300_RC2J2L9NAL8L_RTRMADP_3_EXXON-MOBIL-CARBON.jpg?resize=770%2C513&quality=80' /></Link>
-                <Heading style={news_title} as='h3'>ExxonMobil predicted climate change while downplaying risk</Heading>
-                <Text style={paragraph}>ExxonMobil publicly sowed doubt about climate change despite the oil giant’s own scientists accurately predicting global warming as far back as the 1970s.</Text>
+                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study"><Img width='100%' height='180' alt=' Bangladesh’s RMG exports to US cross $10b' title='Bangladesh’s RMG exports to US cross $10b' src='https://www.newagebd.com/files/records/news/202302/193941_125.jpg' /></Link>
+                <Heading style={news_title} as='h3'>Bangladesh’s RMG exports to US cross $10b</Heading>
+                <Text style={paragraph}>Bangladesh’s apparel and textile exports to the United States crossed US$10 billion in 2022 amid global economic volatility as the US shifted a good chunk of its business from China.</Text>
                 <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study">Read More</Link>
               </Column>
+            </Section>
+
+            <Section style={news_section}>
+              <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
+                <Link style={news_link} href="https://www.dailymirror.lk/breaking_news/Negotiations-on-revised-trade-pact-linking-electricity-grids-with-India-to-begin-in-2-months/108-254220"><Img width='100%' height='180' alt=' Sri Lanka-India negotiate revised trade pact, linking electricity grids ' title=' Sri Lanka-India negotiate revised trade pact, linking electricity grids ' src='https://cdn.newsfirst.lk/english-uploads/2020/05/a928c74b-electricity.jpg' /></Link>
+                <Heading style={news_title} as='h3'> Sri Lanka-India negotiate revised trade pact, linking electricity grids </Heading>
+                <Text style={paragraph}>Sri Lanka and India are looking into ways to strengthen their relationship and will step up their efforts with a revised trade agreement and a deal to connect the electricity grids of the two countries.</Text>
+                <Link style={news_link} href="https://www.dailymirror.lk/breaking_news/Negotiations-on-revised-trade-pact-linking-electricity-grids-with-India-to-begin-in-2-months/108-254220">Read More</Link>
+              </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount"><Img width='100%' height='180' alt='Pakistan gets US$4bn lifeline as economic woes mount' title='Pakistan gets US$4bn lifeline as economic woes mount' src='https://i.dawn.com/primary/2023/01/63c0c38bcb0fd.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Pakistan gets US$4bn lifeline as economic woes mount</Heading>
-                <Text style={paragraph}>Pakistan secured a lifeline of about US$4 billion from the United Arab Emirates and Saudi Arabia to sail through the immediate challenge of a sovereign default.</Text>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount">Read More</Link>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/carbon-border-rules-protectionist-and-discriminatory-india-to-wto/articleshow/97958613.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"><Img width='100%' height='180' alt=' India to WTO: carbon border rules protectionist ' title=' India to WTO: carbon border rules protectionist ' src='https://img.etimg.com/thumb/msid-97958692,width-300,height-225,imgsize-26868,,resizemode-75/carbon.jpg' /></Link>
+                <Heading style={news_title} as='h3'> India to WTO: carbon border rules protectionist </Heading>
+                <Text style={paragraph}>India has slammed the carbon border measures being implemented by some countries, terming them discriminatory and protectionist in a submission to WTO.</Text>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/carbon-border-rules-protectionist-and-discriminatory-india-to-wto/articleshow/97958613.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst">Read More</Link>
               </Column>
             </Section>
 
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.dailymirror.lk/breaking_news/Govt-to-cut-public-expenditure-by-5-as-State-coffers-run-dry/108-251955"><Img width='100%' height='180' alt='SL govt to cut public expenditure by 5%' title='SL govt to cut public expenditure by 5%' src='https://i.ytimg.com/vi/4_jLwyD7CUk/maxresdefault.jpg' /></Link>
-                <Heading style={news_title} as='h3'>SL govt to cut public expenditure by 5%</Heading>
-                <Text style={paragraph}>As State coffers have run dry owing to the steep contraction of the economy last year, President Ranil Wickremesinghe has instructed all ministries to cut five percent of their allocated budgets for 2023.</Text>
-                <Link style={news_link} href="https://www.dailymirror.lk/breaking_news/Govt-to-cut-public-expenditure-by-5-as-State-coffers-run-dry/108-251955">Read More</Link>
+                <Link style={news_link} href="https://www.dailymirror.lk/top_story/Paris-Club-to-give-Sri-Lanka-financing-assurances-amid-IMF-debt-talks/155-253409"><Img width='100%' height='180' alt='Paris Club to give Sri Lanka financing assurances amid IMF debt talks' title='Paris Club to give Sri Lanka financing assurances amid IMF debt talks' src='https://cdn.newsfirst.lk/english-uploads/2023/02/Paris%20Club-714430.jpg' /></Link>
+                <Heading style={news_title} as='h3'>Paris Club to give Sri Lanka financing assurances amid IMF debt talks</Heading>
+                <Text style={paragraph}>The Paris Club of creditor nations is ready to provide financing assurances to Sri Lanka, a key step needed to unlock a US$2.9 billion bailout by the International Monetary Fund (IMF)</Text>
+                <Link style={news_link} href="https://www.dailymirror.lk/top_story/Paris-Club-to-give-Sri-Lanka-financing-assurances-amid-IMF-debt-talks/155-253409">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.bbc.com/news/world-asia-china-64201776"><Img width='100%' height='180' alt='China reopens borders after three years of Covid closure' title='China reopens borders after three years of Covid closure' src='https://ichef.bbci.co.uk/news/976/cpsprodpb/B863/production/_128230274_6b86cb46ffb3ba4d9c3ba056a449a363dbd2de5e0_311_6311_35511000x563.jpg.webp' /></Link>
-                <Heading style={news_title} as='h3'>China reopens borders after three years of Covid closure</Heading>
-                <Text style={paragraph}>China has reopened its borders to international visitors for the first time since it imposed travel restrictions in March 2020 and incoming travellers will no longer need to quarantine.</Text>
-                <Link style={news_link} href="https://www.bbc.com/news/world-asia-china-64201776">Read More</Link>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/more-asian-countries-interested-in-rupee-trade-central-bank-executive/articleshow/98189304.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"><Img width='100%' height='180' alt='More Asian countries interested in Rupee trade' title='More Asian countries interested in Rupee trade' src='https://img.etimg.com/thumb/msid-98189324,width-300,height-225,imgsize-78776,,resizemode-75/rupee-getty.jpg' /></Link>
+                <Heading style={news_title} as='h3'>More Asian countries interested in Rupee trade</Heading>
+                <Text style={paragraph}>More Asian countries, such as Indonesia and the United Arab Emirates, are showing interest in using the Rupee as a trading unit, potentially reducing dependence on the world's reserve currency for cross-border exchange of goods and services.</Text>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/more-asian-countries-interested-in-rupee-trade-central-bank-executive/articleshow/98189304.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst">Read More</Link>
               </Column>
             </Section>
 
-            <Section style={news_section}>
-              <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/b-desh-opens-bangalabandha-dry-port-for-nepali-traders-to-export-yarn/"><Img width='100%' height='180' alt='B’desh opens Bangalabandha Dry Port for Nepali yarn' title='B’desh opens Bangalabandha Dry Port for Nepali yarn' src='https://myrepublica.nagariknetwork.com/uploads/media/dryport_20230108080820.jpg' /></Link>
-                <Heading style={news_title} as='h3'>B’desh opens Bangalabandha Dry Port for Nepali yarn</Heading>
-                <Text style={paragraph}>Nepal can now enjoy easy access to a dry port in Bangladesh to export its yarn to third countries.</Text>
-                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/b-desh-opens-bangalabandha-dry-port-for-nepali-traders-to-export-yarn/">Read More</Link>
-              </Column>
-            </Section>
           </Section>
-          <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
+
+          {/* News End */}
+
+          {/* Publication Start */}
+
+          {/* <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
             <Heading as='h2' style={section_heading}>Publication</Heading>
             <Heading as='h3' style={section_title}>Trade Insight Vol 18 No 1–4 2023</Heading>
             <Text style={paragraph}>Hopes of a normal year in 2022 were dashed by escalating geopolitical tensions, continued US-China trade war, a war in Europe and the resulting rise in energy prices and persistent inflation. Freight and cargo rates fell but were still higher than pre-pandemic levels. Economic recovery was stymied. External shocks—high prices and a hit to foreign exchange earnings—combined with domestic structural weaknesses and policy missteps led to economic crises of varied intensity in South Asia, from an economic collapse in Sri Lanka to a severe foreign exchange crisis in Pakistan to a build-up of pressure on foreign exchange reserves in Bangladesh and Nepal. The latest issue of Trade Insight explores these issues and more.</Text>
@@ -288,7 +300,12 @@ export default function Email() {
             >
               Read More
             </Button>
-          </Section>
+          </Section> */}
+
+          {/* Publication End */}
+
+          {/* Footer Start */}
+
           <Section style={footer_section}>
             <Section style={{ margin: '30px auto' }}>
               <Heading as='h3' style={footer_headings}>Editor</Heading>
@@ -395,6 +412,9 @@ export default function Email() {
             </Section>
 
           </Section>
+
+          {/* Footer End */}
+
         </Container>
       </Section>
     </Html>

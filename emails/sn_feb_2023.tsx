@@ -12,13 +12,16 @@ import { Heading } from '@react-email/heading';
 import { Text } from '@react-email/text';
 import * as React from 'react';
 
+let issue = 'Volume 20, Issue 02, February 2023';
+
 export default function Email() {
 
   return (
     <Html>
       <Head />
-      <Preview>Monthly E-Newsletter of South Asia Watch on Trade, Economics and Environment | Volume 20, Issue 01, January 2023</Preview>
+      <Preview>Monthly E-Newsletter of South Asia Watch on Trade, Economics and Environment | {issue}</Preview>
       <Section style={main}>
+
         <Section style={header}>
           <Heading as='h1' style={header_top}>
             TRADE, CLIMATE CHANGE AND DEVELOPMENT MONITOR
@@ -30,10 +33,11 @@ export default function Email() {
               </span>
             </Column>
             <Column>
-              <span style={{ float: 'right' }}>Volume 20, Issue 01, January 2023</span>
+              <span style={{ float: 'right' }}>{issue}</span>
             </Column>
           </Section>
         </Section>
+
         <Container style={container}>
           <Section style={{ padding: '20px 30px 0' }} >
             <Column>
@@ -44,7 +48,7 @@ export default function Email() {
                 alt="SAWTEE"
               />
             </Column>
-            <Column style={{ display: 'inline-flex', float: 'right' }}>
+            <Column style={{ display: 'flex', maxWidth: 'max-content', justifyContent: 'center', float: 'right' }}>
               <Link href='https://twitter.com/sawteenp' style={social_links}>
                 <Img
                   src="https://sawtee.org/images/twitter-logo.png"
@@ -86,7 +90,7 @@ export default function Email() {
 
           <Section style={section} >
             <Heading as='h2' style={section_heading}>Opinion in Lead</Heading>
-            <Heading as='h3' style={section_title}>Implications of carbon border tax</Heading>
+            <Heading as='h3' style={section_title}>US Inflation Reduction Act disrupts green industrial race</Heading>
             <Text style={paragraph}>
               South Asia is <Link style={anchor} href="https://blogs.worldbank.org/endpovertyinsouthasia/green-energy-can-accelerate-sustainable-growth-across-south-asia#:~:text=A%20Haven%20for%20Green%20Energy&text=Bhutan%20and%20Nepal%20produce%20vast,coal-fired%20capacity%20with%20renewables.">rich in resources</Link> for renewable energy generation: hydropower in Nepal and Bhutan, solar energy potential in Bangladesh and Pakistan, and wind and solar energy generation in Maldives and Sri Lanka. Despite relying heavily on fossil fuels, South Asian countries have been steadily making progress in clean energy projects.
             </Text>
@@ -205,7 +209,7 @@ export default function Email() {
 
 
           {/* News Start */}
-
+          <Hr style={hr} />
           <Section style={section} >
             <Heading as='h2' style={section_heading}>News</Heading>
 
@@ -232,10 +236,10 @@ export default function Email() {
                 <Link style={news_link} href="https://kathmandupost.com/money/2023/02/07/national-pashmina-sector-export-strategy-launched">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study"><Img width='100%' height='180' alt=' Bangladesh’s RMG exports to US cross $10b' title='Bangladesh’s RMG exports to US cross $10b' src='https://www.newagebd.com/files/records/news/202302/193941_125.jpg' /></Link>
+                <Link style={news_link} href="https://www.newagebd.net/article/193941/bangladeshs-rmg-exports-to-us-cross-10b-in-2022"><Img width='100%' height='180' alt=' Bangladesh’s RMG exports to US cross $10b' title='Bangladesh’s RMG exports to US cross $10b' src='https://www.newagebd.com/files/records/news/202302/193941_125.jpg' /></Link>
                 <Heading style={news_title} as='h3'>Bangladesh’s RMG exports to US cross $10b</Heading>
                 <Text style={paragraph}>Bangladesh’s apparel and textile exports to the United States crossed US$10 billion in 2022 amid global economic volatility as the US shifted a good chunk of its business from China.</Text>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study">Read More</Link>
+                <Link style={news_link} href="https://www.newagebd.net/article/193941/bangladeshs-rmg-exports-to-us-cross-10b-in-2022">Read More</Link>
               </Column>
             </Section>
 
@@ -305,6 +309,7 @@ export default function Email() {
           {/* Publication End */}
 
           {/* Footer Start */}
+          <Hr style={hr} />
 
           <Section style={footer_section}>
             <Section style={{ margin: '30px auto' }}>
@@ -352,7 +357,7 @@ export default function Email() {
             <Hr style={hr} />
 
             <Section>
-              <Img src="https://sawtee.org/images/logo_sawtee.jpg" width="150" height="auto" style={{ margin: '0 auto', marginBottom: '10px' }} />
+              <Img src="https://sawtee.org/images/logo_sawtee.jpg" alt="SAWTEE LOGO" width="150" height="auto" style={{ margin: '0 auto', marginBottom: '10px' }} />
               <Button style={{
                 backgroundColor: '#006181',
                 borderRadius: '30px',
@@ -367,48 +372,48 @@ export default function Email() {
                 textAlign: 'center' as const,
               }} pX={20}
                 pY={10} href="https://www.sawtee.org/">Visit Website</Button>
-              <Section style={{ display: 'inline-flex', marginTop: '10px', justifyContent: 'center' }}>
-                <Column style={{ paddingLeft: '5px' }}>
-                  <Link href='https://twitter.com/sawteenp' style={social_links}>
-                    <Img
-                      src="https://sawtee.org/images/twitter-logo.png"
-                      width="24"
-                      height="24"
-                      alt="Twitter"
-                    />
-                  </Link>
-                </Column>
-                <Column style={{ paddingLeft: '5px' }}>
-                  <Link href="https://www.facebook.com/SAWTEENP/" style={social_links}>
-                    <Img
-                      src="https://sawtee.org/images/facebook-logo.png"
-                      width="24"
-                      height="24"
-                      alt="Facebook"
-                    />
-                  </Link>
-                </Column>
-                <Column style={{ paddingLeft: '5px' }}>
-                  <Link href="https://www.linkedin.com/company/sawtee" style={social_links}>
-                    <Img
-                      src="https://sawtee.org/images/linkedin-logo.png"
-                      width="24"
-                      height="24"
-                      alt="LinkedIn"
-                    />
-                  </Link>
-                </Column>
-                <Column style={{ paddingLeft: '5px' }}>
-                  <Link href="https://www.youtube.com/channel/UCP--4sJx0HJONM-UP_53vjg" style={social_links}>
-                    <Img
-                      src="https://sawtee.org/images/youtube-logo.png"
-                      width="24"
-                      height="24"
-                      alt="Youtube"
-                    />
-                  </Link>
-                </Column>
-              </Section>
+            </Section>
+            <Section style={{ marginTop: '20px', maxWidth: 'max-content' }}>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href='https://twitter.com/sawteenp' style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/twitter-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Twitter"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.facebook.com/SAWTEENP/" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/facebook-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Facebook"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.linkedin.com/company/sawtee" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/linkedin-logo.png"
+                    width="24"
+                    height="24"
+                    alt="LinkedIn"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.youtube.com/channel/UCP--4sJx0HJONM-UP_53vjg" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/youtube-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Youtube"
+                  />
+                </Link>
+              </Column>
             </Section>
 
           </Section>
@@ -416,13 +421,14 @@ export default function Email() {
           {/* Footer End */}
 
         </Container>
+
       </Section>
     </Html>
   );
 }
 
 const main = {
-  backgroundColor: 'hsl(45, 38%, 94%)',
+  backgroundColor: 'rgb(246, 243, 234)',
 };
 
 const publications_link = {
@@ -451,7 +457,7 @@ const header = {
 const header_top = {
   margin: '0 auto',
   textAlign: 'center' as const,
-  color: '#7fc4fd',
+  color: '#fff',
   fontSize: '24px',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
