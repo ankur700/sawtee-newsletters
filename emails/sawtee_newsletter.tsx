@@ -12,13 +12,16 @@ import { Heading } from '@react-email/heading';
 import { Text } from '@react-email/text';
 import * as React from 'react';
 
+let CurrentIssue = "Volume 20, Issue 03, March 2023"
+
 export default function Email() {
 
   return (
     <Html>
       <Head />
-      <Preview>Monthly E-Newsletter of South Asia Watch on Trade, Economics and Environment | Volume 20, Issue 01, January 2023</Preview>
+      <Preview>Monthly E-Newsletter of South Asia Watch on Trade, Economics and Environment | {CurrentIssue}</Preview>
       <Section style={main}>
+        {/* Header Section */}
         <Section style={header}>
           <Heading as='h1' style={header_top}>
             TRADE, CLIMATE CHANGE AND DEVELOPMENT MONITOR
@@ -30,10 +33,11 @@ export default function Email() {
               </span>
             </Column>
             <Column>
-              <span style={{ float: 'right' }}>Volume 20, Issue 01, January 2023</span>
+              <span style={{ float: 'right' }}>{CurrentIssue}</span>
             </Column>
           </Section>
         </Section>
+
         <Container style={container}>
           <Section style={{ padding: '20px 30px 0' }} >
             <Column>
@@ -81,6 +85,7 @@ export default function Email() {
             </Column>
           </Section>
           <Hr style={hr} />
+          {/* Opinion in Lead Section */}
           <Section style={section} >
             <Heading as='h2' style={section_heading}>Opinion in Lead</Heading>
             <Heading as='h3' style={section_title}>Implications of carbon border tax</Heading>
@@ -115,6 +120,8 @@ export default function Email() {
             </Section>
 
           </Section>
+          {/* Report Section */}
+
           <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
             <Heading as='h2' style={section_heading}>Report</Heading>
             <Heading as='h3' style={section_title}>Inflation peaking amid low growth</Heading>
@@ -192,50 +199,52 @@ export default function Email() {
             </Section>
 
           </Section>
+
+          {/* News Section */}
           <Section style={section} >
             <Heading as='h2' style={section_heading}>News</Heading>
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link href='https://www.bbc.com/news/business-64142662'><Img width='100%' height='180' alt='Third of world in recession this year, IMF head warns' title='Third of world in recession this year, IMF head warns' src='https://ichef.bbci.co.uk/news/976/cpsprodpb/E5DF/production/_128174885_993e57dee044e4e94f6de72ac1637f5d2ba6d50b.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Third of world in recession this year, IMF head warns</Heading>
-                <Text style={paragraph}>A third of the global economy will be in recession this year as the war in Ukraine, rising prices, higher interest rates and the spread of COVID in China weigh on the global economy.</Text>
-                <Link style={news_link} href="https://www.bbc.com/news/business-64142662">Read More</Link>
+                <Link href='https://www.theguardian.com/business/2023/mar/31/uk-joins-asia-pacific-cptpp-trade-bloc-that-includes-japan-and-australia'><Img width='100%' height='180' alt='UK joins Asia-Pacific CPTPP trade bloc' title='UK joins Asia-Pacific CPTPP trade bloc' src='https://ichef.bbci.co.uk/news/976/cpsprodpb/E5DF/production/_128174885_993e57dee044e4e94f6de72ac1637f5d2ba6d50b.jpg' /></Link>
+                <Heading style={news_title} as='h3'>UK joins Asia-Pacific CPTPP trade bloc</Heading>
+                <Text style={paragraph}>Britain has joined the 11-member strong Asia-Pacific trade bloc that includes Japan and Australia after nearly two years of negotiations.</Text>
+                <Link style={news_link} href="https://www.theguardian.com/business/2023/mar/31/uk-joins-asia-pacific-cptpp-trade-bloc-that-includes-japan-and-australia">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link href='https://www.aljazeera.com/economy/2023/1/25/hindenburg-shorts-indias-adani-citing-debt-accounting-concerns'><Img width='100%' height='180' alt='Hindenburg shorts India’s Adani citing concerns' title='Hindenburg shorts India’s Adani citing concerns' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2012-09-25T120000Z_295164505_GM1E89P1K6T01_RTRMADP_3_INDIA-ADANI.jpg?resize=770%2C513&quality=80' /></Link>
-                <Heading style={news_title} as='h3'>Hindenburg shorts India’s Adani citing concerns</Heading>
-                <Text style={paragraph}>Hindenburg Research said it held short positions in India’s Adani Group, accusing the conglomerate of improper use of offshore tax havens and flagging concerns about high debt.</Text>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/25/hindenburg-shorts-indias-adani-citing-debt-accounting-concerns">Read More</Link>
+                <Link href='https://economictimes.indiatimes.com/news/economy/foreign-trade/export-ban-on-wheat-to-continue-record-output-likely-even-after-untimely-rains-fci-cmd-ashok-k-meena/articleshow/99068285.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst'><Img width='100%' height='180' alt='Export ban on wheat to continue' title='Export ban on wheat to continue' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2012-09-25T120000Z_295164505_GM1E89P1K6T01_RTRMADP_3_INDIA-ADANI.jpg?resize=770%2C513&quality=80' /></Link>
+                <Heading style={news_title} as='h3'>Export ban on wheat to continue</Heading>
+                <Text style={paragraph}>The Indian government said the export ban on wheat will continue as long as the country does not feel comfortable with the domestic supplies to meet the food security needs.</Text>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/export-ban-on-wheat-to-continue-record-output-likely-even-after-untimely-rains-fci-cmd-ashok-k-meena/articleshow/99068285.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst">Read More</Link>
               </Column>
             </Section>
 
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.npr.org/2023/01/29/1152428444/pakistans-nationwide-blackout-is-part-of-an-escalating-crisis"><Img width='100%' height='180' alt="Pakistan's nationwide blackout is part of an escalating crisis" title="Pakistan's nationwide blackout is part of an escalating crisis" src='https://media.npr.org/assets/img/2023/01/29/ap23028760157555_wide-8299e89954f731ca4a48c72b259e21bb3b0ce4ac.jpg?s=400' /></Link>
-                <Heading style={news_title} as='h3'>Pakistan's nationwide blackout is part of an escalating crisis</Heading>
-                <Text style={paragraph}>Pakistan has been struggling to keep its grid up and running in recent months and a recent nationwide blackout showed just how bad the problem has become.</Text>
-                <Link style={news_link} href="https://www.npr.org/2023/01/29/1152428444/pakistans-nationwide-blackout-is-part-of-an-escalating-crisis">Read More</Link>
+                <Link style={news_link} href="https://www.dawn.com/news/1744663/imf-wants-external-financing-commitments-fulfilled-to-release-funds-says-pm-shehbaz"><Img width='100%' height='180' alt="IMF wants external financing commitments fulfilled to release funds" title="IMF wants external financing commitments fulfilled to release funds" src='https://media.npr.org/assets/img/2023/01/29/ap23028760157555_wide-8299e89954f731ca4a48c72b259e21bb3b0ce4ac.jpg?s=400' /></Link>
+                <Heading style={news_title} as='h3'>IMF wants external financing commitments fulfilled to release funds</Heading>
+                <Text style={paragraph}>The IMF wants external financing commitments fulfilled from friendly countries before it releases bailout funds, Prime Minister Shehbaz Sharif said.</Text>
+                <Link style={news_link} href="https://www.dawn.com/news/1744663/imf-wants-external-financing-commitments-fulfilled-to-release-funds-says-pm-shehbaz">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount"><Img width='100%' height='180' alt='Indian made iPhone hits US$1bn exports mark in Dec' title='Indian made iPhone hits US$1bn exports mark in Dec' src='https://img.etimg.com/thumb/msid-97237492,width-300,height-225,imgsize-54614,,resizemode-75/iphone.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Indian made iPhone hits US$1bn exports mark in Dec</Heading>
-                <Text style={paragraph}>Pakistan secured a lifeline of about US$4 billion from the United Arab Emirates and Saudi Arabia to sail through the immediate challenge of a sovereign default.</Text>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount">Read More</Link>
+                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/china-agrees-to-resume-bilateral-trade-with-nepal-via-tatopani-khasa-customs-after-a-hiatus-of-nine-years/"><Img width='100%' height='180' alt='China agrees to resume trade via Tatopani-Khasa customs' title='China agrees to resume trade via Tatopani-Khasa customs' src='https://img.etimg.com/thumb/msid-97237492,width-300,height-225,imgsize-54614,,resizemode-75/iphone.jpg' /></Link>
+                <Heading style={news_title} as='h3'>China agrees to resume trade via Tatopani-Khasa customs</Heading>
+                <Text style={paragraph}>The Chinese government has agreed to resume the two-way trade via Tatopani-Khasa route from May 1 this year after a hiatus of nine years.</Text>
+                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/china-agrees-to-resume-bilateral-trade-with-nepal-via-tatopani-khasa-customs-after-a-hiatus-of-nine-years/">Read More</Link>
               </Column>
             </Section>
 
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study"><Img width='100%' height='180' alt='ExxonMobil predicted climate change while downplaying risk' title='ExxonMobil predicted climate change while downplaying risk' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2021-01-06T000000Z_271332300_RC2J2L9NAL8L_RTRMADP_3_EXXON-MOBIL-CARBON.jpg?resize=770%2C513&quality=80' /></Link>
-                <Heading style={news_title} as='h3'>ExxonMobil predicted climate change while downplaying risk</Heading>
-                <Text style={paragraph}>ExxonMobil publicly sowed doubt about climate change despite the oil giant’s own scientists accurately predicting global warming as far back as the 1970s.</Text>
-                <Link style={news_link} href="https://www.aljazeera.com/economy/2023/1/13/exxonmobil-predicted-climate-change-while-downplaying-risk-study">Read More</Link>
+                <Link style={news_link} href="https://www.newagebd.net/article/197487/bangladesh-bhutan-sign-agreement-on-transit"><Img width='100%' height='180' alt='Bangladesh, Bhutan sign agreement on transit' title='Bangladesh, Bhutan sign agreement on transit' src='https://www.aljazeera.com/wp-content/uploads/2023/01/2021-01-06T000000Z_271332300_RC2J2L9NAL8L_RTRMADP_3_EXXON-MOBIL-CARBON.jpg?resize=770%2C513&quality=80' /></Link>
+                <Heading style={news_title} as='h3'>Bangladesh, Bhutan sign agreement on transit</Heading>
+                <Text style={paragraph}>Bangladesh and Bhutan signed an agreement on movement of traffic-in-transit and protocol at the Bhutanese capital Thimpu to simplify further bilateral trade between the two countries.</Text>
+                <Link style={news_link} href="https://www.newagebd.net/article/197487/bangladesh-bhutan-sign-agreement-on-transit">Read More</Link>
               </Column>
               <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount"><Img width='100%' height='180' alt='Pakistan gets US$4bn lifeline as economic woes mount' title='Pakistan gets US$4bn lifeline as economic woes mount' src='https://i.dawn.com/primary/2023/01/63c0c38bcb0fd.jpg' /></Link>
-                <Heading style={news_title} as='h3'>Pakistan gets US$4bn lifeline as economic woes mount</Heading>
-                <Text style={paragraph}>Pakistan secured a lifeline of about US$4 billion from the United Arab Emirates and Saudi Arabia to sail through the immediate challenge of a sovereign default.</Text>
-                <Link style={news_link} href="https://www.dawn.com/news/1731409/pakistan-gets-4bn-lifeline-as-economic-woes-mount">Read More</Link>
+                <Link style={news_link} href="https://www.dawn.com/news/1742627/dollar-starved-pakistan-struggles-to-pay-international-airlines-report"><Img width='100%' height='180' alt='‘Dollar-starved’ Pakistan struggles to pay international airlines' title='‘Dollar-starved’ Pakistan struggles to pay international airlines' src='https://i.dawn.com/primary/2023/01/63c0c38bcb0fd.jpg' /></Link>
+                <Heading style={news_title} as='h3'>‘Dollar-starved’ Pakistan struggles to pay international airlines</Heading>
+                <Text style={paragraph}>The global air transport body has warned of an ‘aviation crisis’ in Pakistan as airlines are struggling to recover $290 million due to a severe financial crisis.</Text>
+                <Link style={news_link} href="https://www.dawn.com/news/1742627/dollar-starved-pakistan-struggles-to-pay-international-airlines-report">Read More</Link>
               </Column>
             </Section>
 
@@ -256,13 +265,22 @@ export default function Email() {
 
             <Section style={news_section}>
               <Column style={{ float: 'left', paddingRight: '2%', width: '48%' }}>
-                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/b-desh-opens-bangalabandha-dry-port-for-nepali-traders-to-export-yarn/"><Img width='100%' height='180' alt='B’desh opens Bangalabandha Dry Port for Nepali yarn' title='B’desh opens Bangalabandha Dry Port for Nepali yarn' src='https://myrepublica.nagariknetwork.com/uploads/media/dryport_20230108080820.jpg' /></Link>
-                <Heading style={news_title} as='h3'>B’desh opens Bangalabandha Dry Port for Nepali yarn</Heading>
-                <Text style={paragraph}>Nepal can now enjoy easy access to a dry port in Bangladesh to export its yarn to third countries.</Text>
-                <Link style={news_link} href="https://myrepublica.nagariknetwork.com/news/b-desh-opens-bangalabandha-dry-port-for-nepali-traders-to-export-yarn/">Read More</Link>
+                <Link style={news_link} href="https://www.newagebd.net/article/196219/extend-preferential-market-access-for-graduating-ldcs-pm-to-dev-partners"><Img width='100%' height='180' alt='B’desh opens Bangalabandha Dry Port for Nepali yarn' title='B’desh opens Bangalabandha Dry Port for Nepali yarn' src='https://myrepublica.nagariknetwork.com/uploads/media/dryport_20230108080820.jpg' /></Link>
+                <Heading style={news_title} as='h3'>7.	Extend preferential market access for graduating LDCs: Bangladesh</Heading>
+                <Text style={paragraph}>Bangladesh prime minister placed a five-point recommendation, including at least six-year extension of preferential market access for Bangladesh and other graduating least developed countries.</Text>
+                <Link style={news_link} href="https://www.newagebd.net/article/196219/extend-preferential-market-access-for-graduating-ldcs-pm-to-dev-partners">Read More</Link>
+              </Column>
+
+              <Column style={{ float: 'right', paddingLeft: '2%', width: '48%' }}>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/asian-buyers-step-up-indian-corn-imports-as-drought-cuts-argentine-crop/articleshow/98351214.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"><Img width='100%' height='180' alt='‘Dollar-starved’ Pakistan struggles to pay international airlines' title='Asian buyers step up Indian corn imports as drought cuts Argentine crop' src='https://i.dawn.com/primary/2023/01/63c0c38bcb0fd.jpg' /></Link>
+                <Heading style={news_title} as='h3'>Asian buyers step up Indian corn imports as drought cuts Argentine crop</Heading>
+                <Text style={paragraph}>Feed millers in Asia are boosting corn purchases from India, as a severe drought has reduced production in traditional supplier Argentina.</Text>
+                <Link style={news_link} href="https://economictimes.indiatimes.com/news/economy/foreign-trade/asian-buyers-step-up-indian-corn-imports-as-drought-cuts-argentine-crop/articleshow/98351214.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst">Read More</Link>
               </Column>
             </Section>
           </Section>
+
+          {/* Publications/Events Section */}
           <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
             <Heading as='h2' style={section_heading}>Publication</Heading>
             <Heading as='h3' style={section_title}>Trade Insight Vol 18 No 1–4 2023</Heading>
@@ -289,6 +307,8 @@ export default function Email() {
               Read More
             </Button>
           </Section>
+
+          {/* Footer Section */}
           <Section style={footer_section}>
             <Section style={{ margin: '30px auto' }}>
               <Heading as='h3' style={footer_headings}>Editor</Heading>
