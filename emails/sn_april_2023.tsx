@@ -186,32 +186,19 @@ export default function Email() {
 
           <Section style={section} >
             <Heading as='h2' style={section_heading}>Opinion in Lead</Heading>
-            <Heading as='h3' style={section_title}>Implications of carbon border tax</Heading>
+            <Heading as='h3' style={section_title}>Revisions to Nepal-India trade treaty overdue</Heading>
             <Text style={paragraph}>
-              South Asia is <Link style={anchor} href="https://blogs.worldbank.org/endpovertyinsouthasia/green-energy-can-accelerate-sustainable-growth-across-south-asia#:~:text=A%20Haven%20for%20Green%20Energy&text=Bhutan%20and%20Nepal%20produce%20vast,coal-fired%20capacity%20with%20renewables.">rich in resources</Link> for renewable energy generation: hydropower in Nepal and Bhutan, solar energy potential in Bangladesh and Pakistan, and wind and solar energy generation in Maldives and Sri Lanka. Despite relying heavily on fossil fuels, South Asian countries have been steadily making progress in clean energy projects.
+              With the Nepal-India Treaty of Trade up for renewal this year, the Nepal government should seek revisions to the treaty with a view to enhancing mutual benefits from the same.
             </Text>
             <Text style={paragraph}>
-              In the market for end products that use or potentially use clean energy, India hosts companies with potential for international competitiveness, such as Tata Motors which dominates the domestic as well as South Asian electric vehicle (EV) markets and has been looking to <Link style={anchor} href="https://www.business-standard.com/article/companies/tata-motors-to-export-its-evs-to-mature-auto-markets-122040601374_1.html">expand</Link> exports to international markets. As of July 2021, India has 380 EV manufacturers, including 19 companies that <Link style={anchor} href="https://e-amrit.niti.gov.in/Manufacturers">manufacture</Link> four-wheelers. Industry exports were valued at US$13.3 billion in FY21, with USA, Germany, UK, Thailand and Italy as major importers. Exports were <Link style={anchor} href="https://www.investindia.gov.in/sector/auto-components">projected</Link> to grow to US$80 billion by 2026. However, the United States' new <Link style={anchor} href="https://www.whitehouse.gov/cleanenergy/inflation-reduction-act-guidebook/">Inflation Reduction Act</Link> (IRA) could change this trajectory.
+              Influential voices have been suggesting that the treaty be revised to protect Nepali farmers from unfettered agricultural imports. Under the current treaty, Nepal and India provide one another duty-free access for agriculture products. Nepal levies an agriculture reform fee of 5 percent or 9 percent on certain agricultural products from India. Nepal has the latitude to impose much higher tariffs than the current rate but that option has been hamstrung by the Nepal-India trade treaty. The question is whether Nepal can continue to afford providing tariff-free access to heavily subsidized agricultural products from India. One option is to remove select primary agricultural products, including cereals, from the list of primary products on which both countries are currently providing reciprocal tariff-free access.
             </Text>
             <Section style={{ textAlign: 'center' as const, marginTop: '20px' }}>
               <Button
                 pX={10}
                 pY={10}
-                style={{
-                  backgroundColor: '#006181',
-                  borderRadius: '5px',
-                  color: '#fff',
-                  fontFamily:
-                    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                  fontSize: '16px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  textAlign: 'center' as const,
-                  display: 'block',
-                  width: '95%',
-                }}
-                href="https://sawtee.org/opinion-in-lead/us-inflation-reduction-act-disrupts-green-industrial-race.html"
+                style={ButtonStyle}
+                href="https://sawtee.org/opinion-in-lead/revisions-to-nepal-india-trade-treaty-overdue.html"
               >
                 Read More
               </Button>
@@ -220,89 +207,6 @@ export default function Email() {
           </Section>
 
           {/* Opinion in Lead End*/}
-
-          {/* Report */}
-
-          {/* <Section style={{ backgroundColor: '#E8F5F2', padding: '20px 30px', }}>
-            <Heading as='h2' style={section_heading}>Report</Heading>
-            <Heading as='h3' style={section_title}>Inflation peaking amid low growth</Heading>
-            <Section>
-              <Text style={{
-                color: '#525f7f',
-                fontFamily:
-                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                fontSize: '16px',
-                lineHeight: '24px',
-                paddingRight: '10px',
-                textAlign: 'justify' as const,
-              }}>
-                Global growth is projected to fall from an estimated 3.4 percent in
-                2022 to 2.9 percent in 2023, then rise to 3.1 percent in 2024. The
-                forecast for 2023 is 0.2 percentage point higher than predicted in
-                the October 2022 World Economic Outlook (WEO) but below the
-                historical (2000–19) average of 3.8 percent. The rise in central bank rates to fight inflation and Russia’s war in Ukraine continue to weigh on economic activity. The rapid spread of COVID-19 in
-                China dampened growth in 2022, but the recent reopening has
-                paved the way for a faster-than-expected recovery. Global
-                inflation is expected to fall from 8.8 percent in 2022 to 6.6 percent
-                in 2023 and 4.3 percent in 2024, still above pre-pandemic (2017–
-                19) levels of about 3.5 percent.
-
-              </Text>
-            </Section>
-            <Section style={{ textAlign: 'center' as const }}>
-              <Link href="https://www.imf.org/-/media/Files/Publications/WEO/2023/Update/January/English/text.ashx">
-                <Img width='50%' height='auto' alt="Report Image" style={{ display: 'inline', margin: '0 auto' }} src='https://yrncnd.stripocdn.email/content/guids/CABINET_49b31ae232a5315e6ed3052a7a22ca956179bd55f48a5e42fbf3ee6e31c3f0fd/images/newsletter_vol_20_issue_01_january_2023_report_image.png' />
-              </Link>
-            </Section>
-            <Section>
-                <Text style={report_para}>
-                  The balance of risks remains tilted to the downside, but adverse risks have moderated since the October 2022 WEO. On the upside, a stronger boost from pent-up demand in numerous economies or a faster fall in inflation are plausible. On the downside, severe health outcomes in China could hold back the recovery, Russia’s war in Ukraine could escalate, and tighter global financing costs could worsen debt distress. Financial markets could also suddenly reprice in response to adverse inflation news, while further geopolitical fragmentation could hamper economic progress.
-                </Text>
-
-                <Text style={report_para}>
-                In most economies, amid the cost-of-living crisis, the priority
-                remains achieving sustained disinflation. With tighter monetary
-                conditions and lower growth potentially affecting financial and
-                debt stability, it is necessary to deploy macroprudential tools and
-                strengthen debt restructuring frameworks. Accelerating COVID-19
-                vaccinations in China would safeguard the recovery, with positive
-                cross-border spillovers. Fiscal support should be better targeted
-                at those most affected by elevated food and energy prices, and
-                broad-based fiscal relief measures should be withdrawn. Stronger
-                multilateral cooperation is essential to preserve the gains from the
-                rules-based multilateral system and to mitigate climate change by
-                limiting emissions and raising green investment
-                </Text>
-
-            </Section>
-            <Section style={{ textAlign: 'center' as const, marginTop: '20px' }}>
-              <Button
-                pX={10}
-                pY={10}
-                style={{
-                  backgroundColor: '#006181',
-                  borderRadius: '5px',
-                  color: '#fff',
-                  fontFamily:
-                    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                  fontSize: '16px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  textAlign: 'center' as const,
-                  display: 'block',
-                  width: '95%',
-                }}
-                href="https://www.imf.org/-/media/Files/Publications/WEO/2023/Update/January/English/text.ashx"
-              >
-                Read Full Report
-              </Button>
-            </Section>
-
-          </Section> */}
-
-          {/* Report End */}
-
 
           {/* News Start */}
 
@@ -315,7 +219,7 @@ export default function Email() {
                     {item.posts && item.posts.map((post, idx) => {
                       return (
                         <Column key={'0' + idx} style={{ float: 'left', padding: ' 0 2%', width: '46%', }}>
-                          <Link href={post.link}><Img width='100%' height='180' alt={post.title} title={post.title} src={post.image ? post.image : "https://placeholder.pics/svg/280x180/4ED6FF-414AFF/FFFFFF-FFFFFF/sawtee.org"} /></Link>
+                          <Link href={post.link}><Img width='100%' height='180' alt={post.title} title={post.title} src={post.image ? post.image : "/static/placeholer-image.svg"} /></Link>
                           <Heading style={news_title} as='h3'>{post.title}</Heading>
                           <Text style={paragraph}>{post.content}</Text>
                           <Link style={news_link} href={post.link}>Read More</Link>
@@ -343,20 +247,7 @@ export default function Email() {
                   <Button
                     pX={10}
                     pY={10}
-                    style={{
-                      backgroundColor: '#006181',
-                      borderRadius: '5px',
-                      color: '#fff',
-                      fontFamily:
-                        '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                      fontSize: '16px',
-                      fontWeight: 'bold',
-                      textDecoration: 'none',
-                      textTransform: 'uppercase',
-                      textAlign: 'center' as const,
-                      display: 'block',
-                      width: '95%',
-                    }}
+                    style={ButtonStyle}
                     href={event.link}
                   >
                     Read More
@@ -374,7 +265,10 @@ export default function Email() {
           {/* Publication Start */}
 
           <Section style={publication_events_section}>
-            <Heading as='h2' style={section_heading}>Publication</Heading>
+            <Heading as='h2' style={section_heading}>Publications</Heading>
+
+            <Img src="https://sawtee.org/Web_images/SN_April_2023_Publication_section_cover.jpg" width="100%" height="auto" style={{ margin: "10px 0 30px 0", objectFit: "cover" }} />
+
             {Data.publications && Data.publications.map((publication) => {
               return (
                 <Section style={{ paddingBottom: "50px" }}>
@@ -383,20 +277,7 @@ export default function Email() {
                   <Button
                     pX={10}
                     pY={10}
-                    style={{
-                      backgroundColor: '#006181',
-                      borderRadius: '5px',
-                      color: '#fff',
-                      fontFamily:
-                        '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                      fontSize: '16px',
-                      fontWeight: 'bold',
-                      textDecoration: 'none',
-                      textTransform: 'uppercase',
-                      textAlign: 'center' as const,
-                      display: 'block',
-                      width: '95%',
-                    }}
+                    style={ButtonStyle}
                     href={publication.link}
                   >
                     Read More
@@ -471,7 +352,7 @@ export default function Email() {
                 textAlign: 'center' as const,
               }} pX={20}
                 pY={10} href="https://www.sawtee.org/">Visit Website</Button>
-              <Section style={{ display: 'inline-flex', marginTop: '10px', justifyContent: 'center' }}>
+              <Section style={{ marginTop: '10px', textAlign: 'center' as const, width: 'max-content' }}>
                 <Column style={{ paddingLeft: '5px' }}>
                   <Link href='https://twitter.com/sawteenp' style={social_links}>
                     <Img
@@ -668,4 +549,19 @@ const footer_headings = {
   fontSize: '18px', fontFamily:
     '-apple-system,BlinkMacSystemFont,monospace,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   padding: '0', paddingBottom: '5px', margin: '0'
+}
+
+const ButtonStyle = {
+  backgroundColor: '#006181',
+  borderRadius: '5px',
+  color: '#fff',
+  fontFamily:
+    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+  fontSize: '16px',
+  fontWeight: 'bold',
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  textAlign: 'center' as const,
+  display: 'block',
+  width: '95%',
 }
