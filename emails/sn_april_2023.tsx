@@ -267,7 +267,7 @@ export default function Email() {
           <Section style={publication_events_section}>
             <Heading as='h2' style={section_heading}>Publications</Heading>
 
-            <Img src="https://sawtee.org/Web_images/SN_April_2023_Publication_section_cover.jpg" width="100%" height="auto" style={{ margin: "10px 0 30px 0", objectFit: "cover" }} />
+            {/* <Img src="https://sawtee.org/Web_images/SN_April_2023_Publication_section_cover.jpg" width="100%" height="auto" style={{ margin: "10px 0 30px 0", objectFit: "cover" }} /> */}
 
             {Data.publications && Data.publications.map((publication) => {
               return (
