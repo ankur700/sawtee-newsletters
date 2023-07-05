@@ -1,17 +1,6 @@
-import { Button } from '@react-email/button';
-import { Container } from '@react-email/container';
-import { Head } from '@react-email/head';
-import { Hr } from '@react-email/hr';
-import { Html } from '@react-email/html';
-import { Img } from '@react-email/img';
-import { Link } from '@react-email/link';
-import { Preview } from '@react-email/preview';
-import { Section } from '@react-email/section';
-import { Column } from '@react-email/column';
-import { Heading } from '@react-email/heading';
-import { Text } from '@react-email/text';
 import * as React from 'react';
-import { Font } from '@react-email/font';
+import { Button, Container, Head, Hr, Html, Img, Link, Preview, Section, Column, Heading, Text, Font, Body } from '@react-email/components';
+
 const Data = {
   title: 'TRADE, CLIMATE CHANGE AND DEVELOPMENT MONITOR',
   subtitle: 'Monthly E-Newsletter of South Asia Watch on Trade, Economics and Environment',
@@ -106,31 +95,24 @@ export default function Email() {
   return (
     <Html>
       <Head>
-        <Font
-          fontFamily="Roboto"
-          fallbackFontFamily="Verdana"
-          webFont={{
-            url: 'https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2',
-            format: 'woff2',
-          }}
-          fontWeight={400}
-          fontStyle="normal"
-        />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+3|Roboto|Roboto+Mono"></link>
+        <title>{Data.subtitle + " | " + Data.issue}</title>
       </Head>
       <Preview>{Data.subtitle + " | " + Data.issue}</Preview>
-      <Section style={main}>
+      <Body style={main}>
         {/* Header section Start */}
         <Section style={header}>
           <Heading as='h1' style={header_top}>
             {Data.title}
           </Heading>
           <Section style={header_bottom}>
-            <Column>
+            <Column style={{ width: '65%' }}>
               <span style={{ float: 'left' }}>
                 {Data.subtitle}
               </span>
             </Column>
-            <Column>
+            <Column style={{ display: 'flex', justifyContent: 'end' }}>
               <span style={{ float: 'right' }}>{Data.issue}</span>
             </Column>
           </Section>
@@ -191,7 +173,7 @@ export default function Email() {
 
           {/* Opinion in Lead Start */}
           {Data.opinion.title && <Section style={section} >
-            <Heading as='h2' style={section_heading}>Opinion in Lead</Heading>
+            <Heading as="h2" style={section_heading}>Opinion in Lead</Heading>
             <Heading as='h3' style={section_title}>{Data.opinion.title}</Heading>
             <Text style={paragraph}>
               {Data.opinion.paraone}
@@ -241,7 +223,7 @@ export default function Email() {
             {
               Data.news ? Data.news.map((item) => {
                 return (
-                  <Section key={item.row} style={{ paddingBottom: '50px', minHeight: "280px" }} >
+                  <Section key={item.title} style={{ paddingBottom: '50px', minHeight: "280px" }} >
                     {item.posts ? item.posts.map(({ title, link, content, image }) => {
                       return (
                         <Column key={title} style={{ float: 'left', padding: ' 0 2%', width: '46%', }}>
@@ -369,21 +351,30 @@ export default function Email() {
             <Hr style={hr} />
 
             <Section>
-              <Img src="https://sawtee.org/images/logo_sawtee.jpg" width="150" height="auto" style={{ margin: '0 auto', marginBottom: '10px' }} />
-              <Button style={{
-                backgroundColor: '#006181',
-                borderRadius: '30px',
-                color: '#fff',
-                fontFamily:
-                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-                fontSize: '18px',
-                fontWeight: 'bold',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                display: 'block',
-                textAlign: 'center' as const,
-              }} pX={20}
-                pY={10} href="https://www.sawtee.org/">Visit Website</Button>
+              <Column>
+                <Img src="https://sawtee.org/images/logo_sawtee.jpg" width="120" height="auto" style={{ margin: '0 auto' }} />
+              </Column>
+              <Column>
+                <Link
+                  role="button"
+                  style={{
+                    backgroundColor: '#006181',
+                    color: '#fff',
+                    fontFamily:
+                      '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+                    fontSize: '14px',
+                    textDecoration: 'none',
+                    display: 'block',
+                    textAlign: 'center',
+                    width: '100px',
+                    padding: '5px 10px',
+                    margin: '0 auto',
+                  }}
+                  px="16"
+                  py="8"
+                  href="https://www.sawtee.org/">Visit Website</Link>
+              </Column>
+              <Column>
               <Section style={{ marginTop: '10px', textAlign: 'center' as const, width: 'max-content' }}>
                 <Column style={{ paddingLeft: '5px' }}>
                   <Link href='https://twitter.com/sawteenp' style={social_links}>
@@ -426,33 +417,35 @@ export default function Email() {
                   </Link>
                 </Column>
               </Section>
+              </Column>
             </Section>
 
           </Section>
           {/* Footer End */}
 
         </Container>
-      </Section>
+      </Body>
     </Html >
   );
 }
 
 const main = {
   backgroundColor: 'hsl(45, 38%, 94%)',
+  fontFamily: '"Roboto", serif',
 };
 
 const publications_link = {
   color: '#fff',
   fontSize: '12px',
   fontWeight: 'normal',
-  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+  fontFamily: '"Roboto Mono" ,sans-serif',
 }
 
 const container = {
   backgroundColor: '#ffffff',
   margin: '0 auto',
   marginBottom: '64px',
-  maxWidth: '40em'
+  maxWidth: '40em',
 };
 
 const section = {
@@ -466,66 +459,62 @@ const header = {
 
 const header_top = {
   margin: '0 auto',
+  fontFamily: '"Roboto", sans-serif',
+  textShadow: '8px 8px 4px #3b3a3a',
   textAlign: 'center' as const,
   color: '#7fc4fd',
   fontSize: '24px',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-  padding: '20px 0 10px'
+  padding: '20px 0 10px',
 }
 
 const header_bottom = {
   padding: '20px',
+  fontFamily: '"Roboto Mono", monospace',
   color: '#efefef',
   fontSize: '12px',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   fontWeight: 500,
 }
 
 const social_links = {
-  paddingRight: '5px'
+  paddingRight: '5px',
 }
 
 const hr = {
   borderColor: '#e6ebf1',
-  // borderColor: '#efefef',
   margin: '20px 0',
 };
 
 const section_heading = {
-  fontSize: '20px',
-  fontWeight: 'bold',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+  fontSize: '24px',
+  fontFamily: '"Roboto Mono", serif',
+  textShadow: '8px 8px 4px #aaa',
+  fontWeight: '600',
   paddingBottom: '10px',
-  margin: '0'
+  margin: '0',
 }
 
 const section_title = {
   fontSize: '16px',
+  fontFamily: '"Roboto", serif',
   color: '#006181',
   fontWeight: 'bold',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   paddingBottom: '10px',
-  margin: '0'
+  margin: '0',
 }
 
 const paragraph = {
   color: '#525f7f',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   fontSize: '16px',
-  lineHeight: '24px',
-  textAlign: 'left' as const,
-  wordBreak: 'break-word'
+  fontFamily: '"Source Sans 3", serif',
+  lineHeight: '1.5',
+  textAlign: 'left',
+  wordBreak: 'break-word',
 };
 
 const anchor = {
   color: '#556cd6',
   textDecoration: 'underline',
-  textUnderlineOffset: '3px'
+  textUnderlineOffset: '3px',
 };
 
 const publication_events_section = {
@@ -535,52 +524,46 @@ const publication_events_section = {
 
 const news_title = {
   fontSize: '16px',
+  fontFamily: '"Roboto", serif',
   color: '#006181',
   fontWeight: 'bold',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   paddingTop: '10px',
   lineHeight: '1.5',
-  margin: '0'
+  margin: '0',
 }
 
 const news_link = {
   color: '#006181',
   textDecoration: 'underline',
   fontWeight: 'bold',
-  fontFamily: 'monospace'
+  fontFamily: 'monospace',
 
 }
 
 const footer = {
   color: '#222',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   fontSize: '12px',
   lineHeight: '16px',
-  padding: '0', margin: '0'
+  padding: '0', margin: '0',
 };
 
 const footer_section = {
   padding: '0 48px 20px ',
   textAlign: 'center' as const,
-  // backgroundColor: '#ECE8F5'
 }
 
 const footer_headings = {
-  fontSize: '18px', fontFamily:
-    '-apple-system,BlinkMacSystemFont,monospace,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-  padding: '0', paddingBottom: '5px', margin: '0'
+  fontSize: '18px',
+  fontFamily: '"Roboto Mono", monospace',
+  padding: '0', paddingBottom: '5px', margin: '0',
 }
 
 const ButtonStyle = {
   backgroundColor: '#006181',
-  borderRadius: '5px',
+  fontFamily: 'monospace',
+  // borderRadius: '5px',
   color: '#fff',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
   fontSize: '16px',
-  fontWeight: 'bold',
   textDecoration: 'none',
   textTransform: 'uppercase',
   textAlign: 'center' as const,
