@@ -22,5 +22,8 @@
     "@react-email/section": "^0.0.9",
     "@react-email/text": "^0.0.5",
     "react-email": "^1.9.4"
+  },
+  "volta": {
+    "node": "18.18.0"
   }
 }
