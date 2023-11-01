@@ -130,19 +130,13 @@ export default function Email() {
         <Header />
 
         <Container style={container}>
-
           <TopSection />
-
-          <Hr style={hr} />
-
+          <Hr style={{ margin: '0' }} />
           {Data.opinion !== null ? (<OpinionSection opinion={Data.opinion} />) : null}
-
           {Data.report !== null ? <ReportSection report={Data.report} /> : null}
-
           {Data.news !== null ? <NewsSection news={Data.news} /> : null}
-
-          {Data.events !== null ? <EventSection events={Data.events} /> : null
-          }
+          <Hr style={{ margin: "30px 0 0", borderTop: "1px solid #00618173" }} />
+          {Data.events !== null ? <EventSection events={Data.events} /> : null}
           {Data.events !== null && Data.publications !== null && <Section style={publication_events_section}>
             <Hr style={{ margin: "30px 0", borderTop: "1px solid #00618173" }} />
           </Section>}
@@ -165,13 +159,13 @@ const Header = () => {
         {Data.title}
       </Heading>
       <Section style={header_bottom}>
-        <Column style={{ width: '65%' }}>
-          <span style={{ float: 'left' }}>
+        <Column >
+          <Text style={{ margin: '0' }} >
             {Data.subtitle}
-          </span>
+          </Text>
         </Column>
         <Column style={{ display: 'flex', justifyContent: 'end' }}>
-          <span style={{ float: 'right' }}>{Data.issue}</span>
+          <Text style={{ float: 'right', margin: '0' }}>{Data.issue}</Text>
         </Column>
       </Section>
     </Section>
@@ -180,55 +174,19 @@ const Header = () => {
 
 const TopSection = () => {
   return (
-    <Section style={{ padding: '20px 30px 0' }} >
-      <Column style={{ width: '50%' }}>
-        <Link href="https://sawtee.org/">
+
+
+    <Link href="https://sawtee.org/" style={Header_Logo}>
           <Img
             src="https://sawtee.org/images/logo_sawtee.jpg"
-            width="120"
-            height="auto"
-            alt="SAWTEE"
-          />
-        </Link>
-      </Column>
-      <Column style={{ width: '100%' }}>
-        <Column style={{ display: "inline-flex" }}>
-          <Link href='https://twitter.com/sawteenp' style={social_links}>
-            <Img
-              src="https://sawtee.org/images/twitter-logo.png"
-              width="24"
-              height="24"
-              alt="Twitter"
-            />
-          </Link>
-          <Link href="https://www.facebook.com/SAWTEENP/" style={social_links}>
-            <Img
-              src="https://sawtee.org/images/facebook-logo.png"
-              width="24"
-              height="24"
-              alt="Facebook"
-            />
-          </Link>
-          <Link href="https://www.linkedin.com/company/sawtee" style={social_links}>
-            <Img
-              src="https://sawtee.org/images/linkedin-logo.png"
-              width="24"
-              height="24"
-              alt="LinkedIn"
-            />
-          </Link>
-          <Link href="https://www.youtube.com/channel/UCP--4sJx0HJONM-UP_53vjg" style={social_links}>
-            <Img
-              src="https://sawtee.org/images/youtube-logo.png"
-              width="24"
-              height="24"
-              alt="Youtube"
-            />
-          </Link>
-        </Column>
+        width="180px"
+        height="100%"
+        objectFit='cover'
+        alt="SAWTEE LOGO"
+        style={{ padding: '10px 20px' }}
+      />
+    </Link>
 
-      </Column>
-    </Section>
   )
 }
 
@@ -292,7 +250,7 @@ const OpinionSection = ({ opinion }) => {
       <Text style={paragraph}>
         {paragraphTwo}
       </Text>
-      <Section style={{ textAlign: 'center' as const, marginTop: '20px' }}>
+
         <Button
           pX={10}
           pY={10}
@@ -301,7 +259,7 @@ const OpinionSection = ({ opinion }) => {
         >
           Read More
         </Button>
-      </Section>
+
 
     </Section>
   );
@@ -376,7 +334,7 @@ const FooterSection = () => {
           South Asia Watch on Trade, Economics and Environment (SAWTEE)<br />
           P.O. Box: 19366, Tukucha Marg, Kathmandu, Nepal<br />
           Tel: 977-1-4544438, 4524360 Fax: 977-1-4544570<br />
-          Email: <Link href="mailto:enewsletter@sawtee.org" style={anchor}>enewsletter@sawtee.org</Link><br />
+          Email: <Link href="mailto:sawtee@sawtee.org" style={anchor}>sawtee@sawtee.org</Link><br />
           Web: <Link href="https://www.sawtee.org" style={anchor}>www.sawtee.org</Link>
         </Text>
       </Section>
@@ -396,16 +354,16 @@ const FooterSection = () => {
       </Section>
 
       <Section style={{ backgroundColor: '#006181', padding: '10px', marginBottom: '20px' }}>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/trade-insight">Trade Insight </Link></Column>
+        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/trade-insight/">Trade Insight </Link></Column>
         <Column style={{ color: '#fff' }}>|</Column>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/books">Books</Link>
+        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/books/">Books</Link>
         </Column>
         <Column style={{ color: '#fff' }}>|</Column>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/working-paper">Working Paper</Link>
+        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/working-paper/">Working Paper</Link>
         </Column>
         <Column style={{ color: '#fff' }}>|</Column>
 
-        <Column><Link style={publications_link} href="https://www.sawtee.org/newsletters">Newsletter</Link></Column>
+        <Column><Link style={publications_link} href="https://www.sawtee.org/newsletters/">Newsletter</Link></Column>
       </Section>
       <Hr style={hr} />
 
@@ -487,6 +445,10 @@ const main = {
   backgroundColor: 'hsl(45, 38%, 94%)',
   fontFamily: '"Roboto", serif',
 };
+
+const Header_Logo = {
+  display: 'flex', justifyContent: 'start',
+}
 
 const Image_Style = {
   display: "block",
@@ -618,8 +580,9 @@ const ButtonStyle = {
   textDecoration: 'none',
   textTransform: 'uppercase',
   textAlign: textAlign,
-  display: 'block',
-  width: '95%',
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%'
 }
 
 
