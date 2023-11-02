@@ -92,7 +92,7 @@ const Data = {
 export default function Email() {
 
   return (
-    <Html lang="en" dir="ltr">
+    <Html lang="en" dir="ltr" style={{ boxSizing: 'border-box' }}>
       <Head>
         <Font
           fontFamily="Roboto"
@@ -103,6 +103,8 @@ export default function Email() {
           fontWeight={400}
           fontStyle="normal"
         />
+
+        <style rel="stylesheet"></style>
 
         <title>{Data.subtitle + " | " + Data.issue}</title>
       </Head>
@@ -120,7 +122,7 @@ export default function Email() {
           {Data.report !== null ? <ReportSection report={Data.report} /> : null}
           <Hr style={hr} />
           {Data.news !== null ? <NewsSection news={Data.news} /> : null}
-          <Hr style={{ margin: "30px 0 0", borderTop: "1px solid #00618173" }} />
+          <Hr style={hr} />
           {Data.events !== null ? <EventSection events={Data.events} /> : null
           }
           {Data.events !== null && Data.publications !== null && <Section style={publication_events_section}>
@@ -244,25 +246,31 @@ const ReportSection = ({ report }) => {
 
 const NewsSection = ({ news }) => {
   return (
-    <Section style={{ padding: '20px 30px' }}>
-      <Row style={{ margin: '0 0 20px 0' }}>
-        <Heading as='h2' style={section_heading}>News</Heading>
+    <Section style={{ display: 'block', padding: '20px 30px' }}>
+      <Row >
+        <Column>
+          <Heading as='h2' style={section_heading}>News</Heading>
+        </Column>
       </Row>
       {
         news ? news.map((item) => {
           return (
-            <Row key={item.row} style={{ margin: '0 0 50px 0', minHeight: '280px' }}>
-              {item.posts ? item.posts.map(({ title, link, content, image }) => {
-                return (
-                  <Column key={title} style={{ float: 'left', padding: '0 2%', width: '46%', }}>
-                    <Link href={link}><Img style={Image_Style} width='265' height='180' alt={title} title={title} src={image ? image : `https://placehold.co/280x180/e4e4e4/006181?text=${title}`} /></Link>
+
+            item.posts ? item.posts.map(({ title, link, content, image }) => {
+              return (
+                <Section style={{ padding: '0px 20px 50px' }}>
+                  <Row key={item.row}>
+                    <Column key={title}>
+                      <Link href={link} ><Img style={{ objectFit: "cover", width: '100%', height: '280px' }} alt={title} title={title} src={image ? image : `https://placehold.co/280x180/e4e4e4/006181?text=${title}`} /></Link>
                     < Heading style={news_title} as='h3'>{title}</Heading>
                     <Text style={paragraph}>{content}</Text>
                     <Link style={anchor} href={link}>Read More</Link>
-                  </Column>
-                )
-              }) : null}
-            </Row>
+                    </Column>
+                  </Row>
+                </Section>
+              )
+            }) : null
+
           )
         }) : null
       }
@@ -274,41 +282,48 @@ const NewsSection = ({ news }) => {
 const OpinionSection = ({ opinion }) => {
   const { title, paragraphOne, paragraphTwo, link } = opinion;
   return (
-    <Section style={section} >
+    <Section style={{ display: 'block', padding: '20px 30px' }} >
       <Row>
-        <Heading as="h2" style={section_heading}>Opinion in Lead</Heading>
-        <Heading as='h3' style={section_title}>{title}</Heading>
-        <Text style={paragraph}>
-          {paragraphOne}
-        </Text>
-        <Text style={paragraph}>
-          {paragraphTwo}
-        </Text>
+        <Column>
+          <Heading as="h2" style={section_heading}>Opinion in Lead</Heading>
+          <Heading as='h3' style={section_title}>{title}</Heading>
+          {paragraphOne && <Text style={paragraph}>
+            {paragraphOne}
+          </Text>}
+          {paragraphTwo && <Text style={paragraph}>
+            {paragraphTwo}
+          </Text>}
+        </Column>
       </Row>
-      <Row style={{ width: '100%', textAlign: 'center', marginTop: '20px' }}>
-        <Button
-          pX={10}
-          pY={10}
-          style={ButtonStyle}
-          href={link}
-        >
-          Read More
-        </Button>
+      <Row>
+        <Column>
+          <Button
+            pX={10}
+            pY={10}
+            style={ButtonStyle}
+            href={link}
+          >
+            Read More
+          </Button>
+        </Column>
       </Row>
-
     </Section>
   );
 }
 
-const EventSection = ({ events }) => {
-  return (
-    <Section style={{ ...section, backgroundColor: '#E8F5F2' }}>
-      {/* <Heading as='h2' style={section_heading}>Events</Heading> */}
-      {events.map((event, i) => {
-        return (
-          <Row key={event.title} style={{ marginTop: i !== 0 ? "60px" : "0px" }}>
+const EventSection = ({ events }) => (
+
+  events.map((event, i) => {
+    return (
+      <Section style={{ display: 'block', padding: '20px 30px', }}>
+        <Row key={event.title} >
+          <Column style={{ paddingTop: i !== 0 ? "50px" : "0px" }}>
             <Heading as='h3' style={section_title}>{event.title}</Heading>
             <Text style={paragraph} dangerouslySetInnerHTML={{ __html: event.content }} />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
             <Button
               pX={10}
               pY={10}
@@ -317,12 +332,13 @@ const EventSection = ({ events }) => {
             >
               Read More
             </Button>
-          </Row>
-        )
-      })}
-    </Section>
-  )
-}
+          </Column>
+        </Row>
+      </Section>
+    )
+  })
+
+)
 
 const PublicationSection = ({ publications }) => {
   return (
@@ -358,120 +374,134 @@ const PublicationSection = ({ publications }) => {
 
 const FooterSection = () => {
   return (
-    <Section style={{ ...section, textAlign: 'center' }}>
-      <Row style={{ margin: '20px auto' }}>
-        <Heading as='h3' style={footer_headings}>Editor</Heading>
-        <Text style={footer}>Dikshya Singh</Text>
-      </Row>
+    <Section style={{ padding: '10px 30px' }}>
+      <Section style={{ padding: '10px 0px', textAlign: 'center' }}>
+        <Row>
+          <Column>
+            <Heading as='h3' style={footer_headings}>Editor</Heading>
+            <Text style={footer}>Dikshya Singh</Text>
+          </Column>
+        </Row>
 
-      <Row style={{ margin: '20px auto' }}>
-        <Heading as='h3' style={footer_headings}>Contact</Heading>
-        <Text style={footer}>
-          South Asia Watch on Trade, Economics and Environment (SAWTEE)<br />
-          P.O. Box: 19366, Tukucha Marg, Kathmandu, Nepal<br />
-          Tel: 977-1-4544438, 4524360 Fax: 977-1-4544570<br />
-          Email: <Link href="mailto:enewsletter@sawtee.org" style={anchor}>enewsletter@sawtee.org</Link><br />
-          Web: <Link href="https://www.sawtee.org" style={anchor}>www.sawtee.org</Link>
-        </Text>
-      </Row>
+      </Section>
+      <Section style={{ padding: '10px 0px', textAlign: 'center' }}>
+        <Row >
+          <Column style={{ marginBottom: '10px' }}>
+            <Heading as='h3' style={footer_headings}>Contact</Heading>
+            <Text style={footer}>
+              South Asia Watch on Trade, Economics and Environment (SAWTEE)<br />
+              P.O. Box: 19366, Tukucha Marg, Kathmandu, Nepal<br />
+              Tel: 977-1-4544438, 4524360 Fax: 977-1-4544570<br />
+              Email: <Link href="mailto:sawtee@sawtee.org" style={anchor}>sawtee@sawtee.org</Link><br />
+              Web: <Link href="https://www.sawtee.org" style={anchor}>www.sawtee.org</Link>
+            </Text>
+          </Column>
+        </Row>
+      </Section>
 
-      <Row style={{ margin: '20px auto' }}>
-        <Text style={{
-          color: 'grey',
-          fontFamily:
-            '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-          fontSize: '12px',
-          lineHeight: 'normal',
-          padding: '0', margin: '0'
-        }}>
-          <em>You are receiving this email because you have visited our site or asked us about regular newsletter. To unsubscribe send email with subject "Unsubscribe" to <Link href="mailto:sawtee@sawtee.org" style={anchor}>SAWTEE</Link>.
-            Check our other publications below</em>
-        </Text>
-      </Row>
-
-      <Row style={{ backgroundColor: '#006181', padding: '10px', marginBottom: '20px' }}>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/trade-insight">Trade Insight </Link></Column>
-        <Column style={{ color: '#fff' }}>|</Column>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/books">Books</Link>
-        </Column>
-        <Column style={{ color: '#fff' }}>|</Column>
-        <Column><Link style={publications_link} href="https://www.sawtee.org/publications/working-paper">Working Paper</Link>
-        </Column>
-        <Column style={{ color: '#fff' }}>|</Column>
-
-        <Column><Link style={publications_link} href="https://www.sawtee.org/newsletters">Newsletter</Link></Column>
-      </Row>
-      <Hr style={hr} />
-
-      <Row>
-        <Column>
-          <Img src="https://sawtee.org/images/logo_sawtee.jpg" width="120" height="auto" style={{ margin: '0 auto' }} />
-        </Column>
-        <Column>
-          <Link
-            role="button"
-            style={{
-              backgroundColor: '#006181',
-              color: '#fff',
+      <Section style={{ padding: '10px 0px', textAlign: 'center' }}>
+        <Row>
+          <Column style={{ marginBottom: '10px' }}>
+            <Text style={{
+              color: 'grey',
               fontFamily:
                 '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-              fontSize: '14px',
-              textDecoration: 'none',
-              display: 'block',
-              textAlign: 'center',
-              width: '100px',
-              padding: '5px 10px',
-              margin: '0 auto',
-            }}
-            px="16"
-            py="8"
-            href="https://www.sawtee.org/">Visit Website</Link>
-        </Column>
-        <Column>
-          <Section style={{ marginTop: '10px', textAlign: 'center', width: 'max-content' }}>
-            <Column style={{ paddingLeft: '5px' }}>
-              <Link href='https://twitter.com/sawteenp' style={social_links}>
-                <Img
-                  src="https://sawtee.org/images/twitter-logo.png"
-                  width="24"
-                  height="24"
-                  alt="Twitter"
-                />
-              </Link>
-            </Column>
-            <Column style={{ paddingLeft: '5px' }}>
-              <Link href="https://www.facebook.com/SAWTEENP/" style={social_links}>
-                <Img
-                  src="https://sawtee.org/images/facebook-logo.png"
-                  width="24"
-                  height="24"
-                  alt="Facebook"
-                />
-              </Link>
-            </Column>
-            <Column style={{ paddingLeft: '5px' }}>
-              <Link href="https://www.linkedin.com/company/sawtee" style={social_links}>
-                <Img
-                  src="https://sawtee.org/images/linkedin-logo.png"
-                  width="24"
-                  height="24"
-                  alt="LinkedIn"
-                />
-              </Link>
-            </Column>
-            <Column style={{ paddingLeft: '5px' }}>
-              <Link href="https://www.youtube.com/channel/UCP--4sJx0HJONM-UP_53vjg" style={social_links}>
-                <Img
-                  src="https://sawtee.org/images/youtube-logo.png"
-                  width="24"
-                  height="24"
-                  alt="Youtube"
-                />
-              </Link>
-            </Column>
-          </Section>
-        </Column>
-      </Row>
+              fontSize: '12px',
+              lineHeight: 'normal',
+              padding: '0 0 20px', margin: '0'
+            }}>
+              <em>You are receiving this email because you have visited our site or asked us about regular newsletter. To unsubscribe send email with subject "Unsubscribe" to <Link href="mailto:sawtee@sawtee.org" style={anchor}>SAWTEE</Link>.
+                Check our other publications below</em>
+            </Text>
+          </Column>
+        </Row>
+      </Section>
+
+      <Section style={{ backgroundColor: '#006181', padding: '10px', marginBottom: '10px', textAlign: 'center' }}>
+        <Row>
+          <Column style={{ textAlign: 'center' }}><Link style={publications_link} href="https://www.sawtee.org/publications/trade-insight/">Trade Insight </Link></Column>
+          <Column style={{ color: '#fff' }}>|</Column>
+          <Column style={{ textAlign: 'center' }}><Link style={publications_link} href="https://www.sawtee.org/publications/books/">Books</Link>
+          </Column>
+          <Column style={{ color: '#fff' }}>|</Column>
+          <Column style={{ textAlign: 'center' }}><Link style={publications_link} href="https://www.sawtee.org/publications/working-paper/">Working Paper</Link>
+          </Column>
+          <Column style={{ color: '#fff' }}>|</Column>
+
+          <Column style={{ textAlign: 'center' }}><Link style={publications_link} href="https://www.sawtee.org/newsletters/">Newsletter</Link></Column>
+        </Row>
+      </Section>
+      <Section>
+        <Row>
+          <Column>
+            <Img src="https://sawtee.org/images/logo_sawtee.jpg" width="120" height="auto" style={{ margin: '0 auto' }} />
+          </Column>
+          <Column>
+            <Link
+              role="button"
+              style={{
+                backgroundColor: '#006181',
+                color: '#fff',
+                fontFamily:
+                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+                fontSize: '14px',
+                textDecoration: 'none',
+                display: 'block',
+                textAlign: 'center',
+                width: '100px',
+                padding: '5px 10px',
+                margin: '0 auto',
+              }}
+              px="16"
+              py="8"
+              href="https://www.sawtee.org/">Visit Website</Link>
+          </Column>
+          <Column>
+            <Section style={{ marginTop: '10px', textAlign: 'center', width: 'max-content' }}>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href='https://twitter.com/sawteenp' style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/twitter-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Twitter"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.facebook.com/SAWTEENP/" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/facebook-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Facebook"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.linkedin.com/company/sawtee" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/linkedin-logo.png"
+                    width="24"
+                    height="24"
+                    alt="LinkedIn"
+                  />
+                </Link>
+              </Column>
+              <Column style={{ paddingLeft: '5px' }}>
+                <Link href="https://www.youtube.com/channel/UCP--4sJx0HJONM-UP_53vjg" style={social_links}>
+                  <Img
+                    src="https://sawtee.org/images/youtube-logo.png"
+                    width="24"
+                    height="24"
+                    alt="Youtube"
+                  />
+                </Link>
+              </Column>
+            </Section>
+          </Column>
+        </Row>
+      </Section>
     </Section>
   )
 }
@@ -480,13 +510,6 @@ const main = {
   backgroundColor: 'hsl(45, 38%, 94%)',
   fontFamily: '"Roboto", serif',
 };
-
-const Image_Style = {
-  display: "block",
-  width: "100%",
-  objectFit: "cover",
-  border: "1px solid grey",
-}
 
 const publications_link = {
   color: '#fff',
@@ -498,12 +521,10 @@ const container = {
   backgroundColor: '#ffffff',
   margin: '0 auto',
   marginBottom: '64px',
+  width: '100%',
   maxWidth: '40em',
 };
 
-const section = {
-  padding: '20px 30px',
-}
 
 const header = {
   backgroundColor: '#006181',
@@ -537,7 +558,7 @@ const section_heading = {
   color: "#262626",
   fontSize: '24px',
   fontWeight: '600',
-  paddingBottom: '10px',
+  paddingBottom: '20px',
   margin: '0',
 }
 
@@ -563,6 +584,7 @@ const anchor = {
   fontWeight: 'bold',
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
+  marginBottom: '20px'
 };
 
 const publication_events_section = {
@@ -574,7 +596,7 @@ const news_title = {
   fontSize: '14px',
   color: '#006181',
   fontWeight: 'bold',
-  paddingTop: '10px',
+  padding: '10px 0',
   lineHeight: '1.5',
   margin: '0',
 }
@@ -586,11 +608,6 @@ const footer = {
   padding: '0', margin: '0',
   textAlign: 'center',
 };
-
-const footer_section = {
-  padding: '20px 48px',
-  textAlign: textAlign,
-}
 
 const footer_headings = {
   color: '#262626',
@@ -610,9 +627,8 @@ const ButtonStyle = {
   textDecoration: 'none',
   textTransform: 'uppercase',
   textAlign: textAlign,
-  display: 'flex',
-  justifyContent: 'center',
-  width: '95%',
+  flexGrow: '1',
+  width: '98% !important',
 }
 
 
